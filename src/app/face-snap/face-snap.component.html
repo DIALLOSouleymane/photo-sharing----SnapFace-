@@ -1,0 +1,23 @@
+<div class="face-snap-card" [ngClass]="{snapped: buttonName === 'Ops, UnSnap 👎'}">
+    <h2>{{ faceSnap.title | titlecase}}</h2>
+    <!-- <p>Mise en ligne : {{ faceSnap.createDate | date: 'le dd/mm/yyyy, à HH:mm'}}</p> -->
+    <!-- <p>Mise en ligne : {{ faceSnap.createDate | date: 'le dd MMMM yyyy, à HH:mm'}}</p> -->
+    <!-- <p> -->
+        <!-- <img src="{{ imageUrl }}" alt=" {{title }}">
+        Cette syntaxe-ci est correcte mais n'est pas recommandé.
+        En effet les valeurs d'un attribut ne sont pas toujours des chaines...
+        Pour pallier cela, on préfère plutot les [] a la place des {{  }}
+        -->
+        <!-- <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title"> -->
+    <!-- </p> -->
+    <p>{{ faceSnap.description }}</p>
+    <!-- <p *ngIf="faceSnap.location">Photo prise à : <b>{{faceSnap.location}}</b></p> -->
+    <!-- <p> -->
+        <!-- <button (click)="onAddSnap()">Oh Snap!</button> -->
+        <!-- <button (click)="onSnap()">{{ buttonName }}</button>
+        💛 <span [ngStyle]="{color: 'rgb(0,' + faceSnap.snaps + ', 0)'}">{{ faceSnap.snaps }}</span> -->
+        <!-- 💛 <span>{{ faceSnap.snaps }}</span> -->
+    <!-- </p> -->
+    <button (click)="onViewfaceSnap()">VIEW</button>
+
+</div>

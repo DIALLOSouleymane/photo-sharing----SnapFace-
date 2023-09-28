@@ -1,0 +1,35 @@
+<!-- <div> -->
+    <!-- <app-face-snap></app-face-snap> -->
+
+    <!-- Utilisation de l'attribute binding pour lier l'objet à la propriete
+    personnalisee FAceSnap de FaceSnapComponent -->
+    <!-- <app-face-snap [faceSnap]="mySnap"></app-face-snap>
+    <app-face-snap [faceSnap]="myOtherSnap"></app-face-snap>
+    <app-face-snap [faceSnap]="myLastSnap"></app-face-snap> -->
+
+    <!-- 
+        Maintenant dans le template, au lieu d'inserer plusieurs instances de 
+        app-face-snap, on utilise ceci :
+    -->
+    <!-- <div [ngStyle]="{'text-align': 'center'}">
+        <h2>Pipe numbres Testing</h2>
+        <b>Nombre initial (sans Formatage) : </b>{{ 1234456.4554}} <br>
+        <b>Zéro chiffre après la virgule :</b> {{ 1234456.4554 | number: '1.0-0'}} <br>
+        <b>Un chiffre après la virgule :</b> {{ 1234456.4554 | number: '1.0-1'}} <br>
+        <b>Deux chiffres après la virgule :</b> {{ 1234456.4554 | number: '1.0-2'}} <br>
+        <b>Trois chiffres après la virgule :</b> {{ 1234456.4554 | number: '1.0-3'}} <br>
+        <b>Ou encore chiffres après la virgule :</b> {{ 1234456.4554 | number: '1.3'}} <br>
+
+        <h2>Percent Pipe</h2>
+        <b>Valeur initiale : </b> {{ 0.337 }} <br>
+        <b>Arrondi à [2, 3] : </b> {{ 0.337 | percent: '1.2-3' }} <br>
+        <b>Arrondi à 3 : </b> {{ 0.337 | percent: '1.3' }} <br>
+        <b>Arrondi à 5 : </b> {{ 0.337 | percent: '1.5' }} <br> -->
+    <!-- </div> -->
+<div>
+    <!-- <app-face-snap *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap> -->
+
+    <!-- observables -->
+    <app-face-snap *ngFor="let faceSnap of faceSnaps$ | async" [faceSnap]="faceSnap"></app-face-snap>
+
+</div>
